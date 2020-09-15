@@ -157,24 +157,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-let geoBtns = document.querySelector('.geo__buttons');
-geoBtns.addEventListener('click', function () {
-    let btns = geoBtns.querySelectorAll('.geo__btn');
-    let geoInfo = geoBtns.querySelectorAll('.geo__info');
-
-    btns.forEach(function (elem, ind) {
-        let icons = elem.querySelectorAll('img');
-        if (event.target == elem || event.target == icons[0] || event.target == icons[1]) {
-            if (geoInfo[ind].classList.contains('geo__info--active')) {
-                geoInfo.forEach((el) => { el.classList.remove('geo__info--active') });
-            } else {
-                geoInfo.forEach((el) => { el.classList.remove('geo__info--active') });
-                geoInfo[ind].classList.add('geo__info--active');
-            }
-        }
-    });
-});
-
 var mySwiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,
@@ -197,21 +179,4 @@ mySwiper.el.addEventListener('mouseleave', function() {
 mySwiper.el.addEventListener('mouseenter', function() {
     mySwiper.autoplay.stop();
 });
-
-
-
-var googleMap;
-function initMap() {
-    var myLatLng = { lat: 52.026975, lng: 113.499849 };
-    var mapMarker = './img/icon/marker.png';
-    googleMap = new google.maps.Map(document.getElementById('google-map'), {
-        center: myLatLng,
-        zoom: 17
-    });
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: googleMap,
-        icon: mapMarker
-    });
-}
 
