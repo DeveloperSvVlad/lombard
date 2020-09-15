@@ -135,14 +135,6 @@ window.addEventListener('scroll', function() {
 // });
 //============================
 
-var phoneForm = document.getElementById('phoneForm');
-var maskOptions = {
-    mask: '+{7} ( 000 ) 000 - 00 - 00',
-    lazy: false
-};
-var phoneFormMask = IMask(phoneForm, maskOptions);
-
-
 window.addEventListener('DOMContentLoaded', function () {
     let pledgeListText = document.querySelectorAll('.pledge-list__text');
     let pledgeListBtn = document.querySelectorAll('.pledge-list__more');
